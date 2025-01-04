@@ -12,7 +12,8 @@ export default async function App() {
       <Home />
       {serverConfig?.isVercel && (
         <>
-          <Analytics />
+          {" "}
+          <Analytics />{" "}
         </>
       )}
     </>

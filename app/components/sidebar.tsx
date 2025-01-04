@@ -30,6 +30,7 @@ import { isIOS, useMobileScreen } from "../utils";
 import dynamic from "next/dynamic";
 import { showConfirm, Selector } from "./ui-lib";
 import clsx from "clsx";
+import FontPicker from "./lifonts/lifonts";
 
 const DISCOVERY = [
   { name: Locale.Plugin.Name, path: Path.Plugins },
@@ -43,7 +44,6 @@ const ChatList = dynamic(async () => (await import("./chat-list")).ChatList, {
 
 export function useHotKey() {
   const chatStore = useChatStore();
-
   useEffect(() => {
     const onKeyDown = (e: KeyboardEvent) => {
       if (e.altKey || e.ctrlKey) {
@@ -54,7 +54,6 @@ export function useHotKey() {
         }
       }
     };
-
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
   });
@@ -62,12 +61,10 @@ export function useHotKey() {
 
 export function useDragSideBar() {
   const limit = (x: number) => Math.min(MAX_SIDEBAR_WIDTH, x);
-
   const config = useAppConfig();
   const startX = useRef(0);
   const startDragWidth = useRef(config.sidebarWidth ?? DEFAULT_SIDEBAR_WIDTH);
   const lastUpdateTime = useRef(Date.now());
-
   const toggleSideBar = () => {
     config.update((config) => {
       if (config.sidebarWidth < MIN_SIDEBAR_WIDTH) {
@@ -77,7 +74,6 @@ export function useDragSideBar() {
       }
     });
   };
-
   const onDragStart = (e: MouseEvent) => {
     // Remembers the initial width each time the mouse is pressed
     startX.current = e.clientX;
@@ -190,6 +186,12 @@ export function SideBarHeader(props: {
         </div>
         <div className={clsx(styles["sidebar-logo"], "no-dark")}>{logo}</div>
       </div>
+      <div className="p-20 h-screen flex items-center justify-center">
+        select_lifont:
+      </div>
+      <div className="p-20 h-screen flex items-center justify-center">
+        <FontPicker />
+      </div>
       {children}
     </Fragment>
   );
@@ -236,8 +238,8 @@ export function SideBar(props: { className?: string }) {
       {...props}
     >
       <SideBarHeader
-        title="NextChat"
-        subTitle="Build your own AI assistant."
+        title="chatgpt8"
+        subTitle="apnA ai assistant bnao"
         logo={<ChatGptIcon />}
         shouldNarrow={shouldNarrow}
       >

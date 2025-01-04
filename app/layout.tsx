@@ -7,13 +7,15 @@ import type { Metadata, Viewport } from "next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { getServerSideConfig } from "./config/server";
 import { GoogleTagManager, GoogleAnalytics } from "@next/third-parties/google";
+import { ing115_font } from "./components/lifonts/lifonts";
 const serverConfig = getServerSideConfig();
 
 export const metadata: Metadata = {
-  title: "NextChat",
-  description: "Your personal ChatGPT Chat Bot.",
+  title: "lifont_chatgpt",
+  description:
+    "laNguage independent fonts (lifonts) chatgpt phonetic hscii code ke sATh",
   appleWebApp: {
-    title: "NextChat",
+    title: "lifont_chatgpt",
     statusBarStyle: "default",
   },
 };
@@ -48,21 +50,24 @@ export default function RootLayout({
         ></link>
         <script src="/serviceWorkerRegister.js" defer></script>
       </head>
-      <body>
+      <body className={`${ing115_font.className}`}>
         {children}
         {serverConfig?.isVercel && (
           <>
-            <SpeedInsights />
+            {" "}
+            <SpeedInsights />{" "}
           </>
         )}
         {serverConfig?.gtmId && (
           <>
-            <GoogleTagManager gtmId={serverConfig.gtmId} />
+            {" "}
+            <GoogleTagManager gtmId={serverConfig.gtmId} />{" "}
           </>
         )}
         {serverConfig?.gaId && (
           <>
-            <GoogleAnalytics gaId={serverConfig.gaId} />
+            {" "}
+            <GoogleAnalytics gaId={serverConfig.gaId} />{" "}
           </>
         )}
       </body>
