@@ -30,7 +30,7 @@ import { isIOS, useMobileScreen } from "../utils";
 import dynamic from "next/dynamic";
 import { showConfirm, Selector } from "./ui-lib";
 import clsx from "clsx";
-import FontPicker from "./lifonts/lifonts";
+import FontPicker from "./lifonts/lifp";
 
 const DISCOVERY = [
   { name: Locale.Plugin.Name, path: Path.Plugins },
