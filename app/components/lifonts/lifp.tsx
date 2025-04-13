@@ -1,9 +1,8 @@
 "use client";
-
 import React, { useState } from "react";
 import Select from "react-select";
 import data from "./data.json";
-import { v_to_f } from "./vtof";
+import { w2f } from "./w2f";
 
 interface ScriptOption {
   olabel: string;
@@ -37,14 +36,12 @@ const FontPicker: React.FC = () => {
       setBodyFont(sfontObject.ovalue);
     }
   };
-
   const setBodyFont = (sval: string) => {
     document.body.className = "";
-    const sf = v_to_f(sval);
+    const sf = w2f(sval);
     document.body.classList.add(sf);
     document.body.classList.add("antialiased");
   };
-
   return (
     <div
       style={{
@@ -56,7 +53,7 @@ const FontPicker: React.FC = () => {
     >
       <Select
         id="scriptsel"
-        placeholder="select script"
+        placeholder="lAng(bhαsα).select"
         value={script}
         options={data}
         onChange={handleScriptChange}
@@ -65,7 +62,7 @@ const FontPicker: React.FC = () => {
       />
       <Select
         id="fontsel"
-        placeholder="select sfont"
+        placeholder="languagefont.select"
         value={sfont}
         options={sfontlist}
         onChange={handleSFontChange}
@@ -75,5 +72,4 @@ const FontPicker: React.FC = () => {
     </div>
   );
 };
-
 export default FontPicker;
