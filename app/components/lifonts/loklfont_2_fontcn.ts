@@ -1,6 +1,7 @@
 import {
   inglishenglosoftw8asc,
   binarywenglosoftw8asc,
+  russianenglosoftw8asc,
   banglaenglosoftw8asc,
   guzratienglosoftw8asc,
   kannadaenglosoftw8asc,
@@ -18,14 +19,16 @@ export const loklfont_2_fontcn = (sval: string): string => {
   switch (sval) {
     case "binarywenglosoftw8asc":
       return binarywenglosoftw8asc.className;
+    case "koreanenglosoftw8asc":
+      return koreanenglosoftw8asc.className;
+    case "russianenglosoftw8asc":
+      return russianenglosoftw8asc.className;
     case "inglishenglosoftw8asc":
       return inglishenglosoftw8asc.className;
     case "hindienglosoftw8asc":
       return hindienglosoftw8asc.className;
     case "banglaenglosoftw8asc":
       return banglaenglosoftw8asc.className;
-    case "koreanenglosoftw8asc":
-      return koreanenglosoftw8asc.className;
     case "sinhalaenglosoftw8asc":
       return sinhalaenglosoftw8asc.className;
     case "tamilenglosoftw8asc":

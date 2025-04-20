@@ -29,6 +29,14 @@
     ]
   },
   {
+    "olabel": "russian englosoft",
+    "ovalue": "russianenglosoftw8asc",
+    "sfonts": [
+      { "olabel": "russian englosoft", "ovalue": "russianenglosoftw8asc" },
+      { "olabel": "inglish englosoft", "ovalue": "inglishenglosoftw8asc" }
+    ]
+  },
+  {
     "olabel": "bangla englosoft",
     "ovalue": "banglaenglosoftw8asc",
     "sfonts": [
