@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import Select from "react-select";
 import data from "./data.json";
-import { w2f } from "./w2f";
+import { loklfont_2_fontcn } from "./loklfont_2_fontcn";
 
 interface ScriptOption {
   olabel: string;
@@ -38,7 +38,7 @@ const FontPicker: React.FC = () => {
   };
   const setBodyFont = (sval: string) => {
     document.body.className = "";
-    const sf = w2f(sval);
+    const sf = loklfont_2_fontcn(sval);
     document.body.classList.add(sf);
     document.body.classList.add("antialiased");
   };
@@ -62,6 +62,8 @@ const FontPicker: React.FC = () => {
       />
       <Select
         id="fontsel"
+        className="hidden"
+        isDisabled
         placeholder="languagefont.select"
         value={sfont}
         options={sfontlist}
