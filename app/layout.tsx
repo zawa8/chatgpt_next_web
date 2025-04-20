@@ -7,7 +7,7 @@ import type { Metadata, Viewport } from "next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { getServerSideConfig } from "./config/server";
 import { GoogleTagManager, GoogleAnalytics } from "@next/third-parties/google";
-import { hindi15 } from "./components/lifonts/localfonts";
+import { hindienglosoftw8asc } from "./components/lifonts/localfonts";
 const serverConfig = getServerSideConfig();
 
 export const metadata: Metadata = {
@@ -50,7 +50,7 @@ export default function RootLayout({
         ></link>
         <script src="/serviceWorkerRegister.js" defer></script>
       </head>
-      <body className={`${hindi15.className}`}>
+      <body className={`${hindienglosoftw8asc.className}`}>
         {children}
         {serverConfig?.isVercel && (
           <>
